@@ -51,6 +51,21 @@
     <video class="hero-video" autoplay muted loop playsinline>
       <source src="assets/lily.mp4" type="video/mp4">
     </video>
+    <video class="hero-video hero-video--reveal" id="hero-video-reveal" autoplay muted loop playsinline aria-hidden="true">
+      <source src="assets/lilyOverlay.mp4" type="video/mp4">
+    </video>
+    <svg class="hero-splash-defs" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="hero-splash-filter" x="-60%" y="-60%" width="220%" height="220%">
+          <feTurbulence id="hero-splash-turbulence" type="fractalNoise" baseFrequency="0.015 0.02" numOctaves="2" seed="7" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="60" xChannelSelector="R" yChannelSelector="G" result="displaced" />
+          <feGaussianBlur in="displaced" stdDeviation="16" />
+        </filter>
+        <mask id="hero-splash-mask">
+          <circle id="hero-splash-circle" cx="0" cy="0" r="180" fill="#ffffff" filter="url(#hero-splash-filter)" />
+        </mask>
+      </defs>
+    </svg>
     <div class="hero-video-overlay" aria-hidden="true"></div>
     <div class="container hero-content">
       <div class="hero-eyebrow reveal">

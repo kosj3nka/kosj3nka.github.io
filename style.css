@@ -344,6 +344,20 @@ body:has(button:hover) .cursor {
   pointer-events: none;
 }
 
+.hero-splash-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.hero-video--reveal {
+  mask: url(#hero-splash-mask);
+  -webkit-mask: url(#hero-splash-mask);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
+
 .hero-content {
   position: relative;
   z-index: 2;
