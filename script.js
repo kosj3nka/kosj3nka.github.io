@@ -141,3 +141,53 @@ if (prefersReducedMotion.matches) {
   const ticker = document.querySelector('.ticker-track');
   if (ticker) ticker.style.animationPlayState = 'paused';
 }
+
+/* ============================================================
+   HERO SPLASH REVEAL
+   ============================================================ */
+function initHeroSplash() {
+  const hero   = document.querySelector('.hero');
+  const circle = document.getElementById('hero-splash-circle');
+
+  if (!hero || !circle) return;
+  if (window.matchMedia('(hover: none)').matches) return; // skip on touch
+
+  const SPLASH_RADIUS = 180; // px
+
+  let heroRect = hero.getBoundingClientRect();
+  window.addEventListener('resize', () => {
+    heroRect = hero.getBoundingClientRect();
+  }, { passive: true });
+
+  let targetX = heroRect.width / 2;
+  let targetY = heroRect.height / 2;
+  let splashX = targetX;
+  let splashY = targetY;
+  let targetR = 0;
+  let splashR = 0;
+
+  hero.addEventListener('mousemove', e => {
+    heroRect = hero.getBoundingClientRect();
+    targetX = e.clientX - heroRect.left;
+    targetY = e.clientY - heroRect.top;
+  });
+
+  hero.addEventListener('mouseenter', () => { targetR = SPLASH_RADIUS; });
+  hero.addEventListener('mouseleave', () => { targetR = 0; });
+
+  function animateSplash() {
+    splashX += (targetX - splashX) * 0.12;
+    splashY += (targetY - splashY) * 0.12;
+    splashR += (targetR - splashR) * 0.15;
+
+    circle.setAttribute('cx', splashX.toFixed(1));
+    circle.setAttribute('cy', splashY.toFixed(1));
+    circle.setAttribute('r', splashR.toFixed(1));
+
+    requestAnimationFrame(animateSplash);
+  }
+
+  animateSplash();
+}
+
+initHeroSplash();
