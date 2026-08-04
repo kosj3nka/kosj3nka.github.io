@@ -154,6 +154,9 @@ function initHeroSplash() {
 
   const SPLASH_RADIUS = 180; // px
 
+  const turbulence = document.getElementById('hero-splash-turbulence');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   let heroRect = hero.getBoundingClientRect();
   window.addEventListener('resize', () => {
     heroRect = hero.getBoundingClientRect();
@@ -188,6 +191,18 @@ function initHeroSplash() {
   }
 
   animateSplash();
+
+  if (turbulence && !prefersReducedMotion) {
+    let t = 0;
+    function animateTurbulence() {
+      t += 0.0015;
+      const fx = (0.015 + Math.sin(t) * 0.004).toFixed(4);
+      const fy = (0.02 + Math.cos(t * 0.8) * 0.004).toFixed(4);
+      turbulence.setAttribute('baseFrequency', `${fx} ${fy}`);
+      requestAnimationFrame(animateTurbulence);
+    }
+    animateTurbulence();
+  }
 }
 
 initHeroSplash();
