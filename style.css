@@ -356,6 +356,12 @@ body:has(button:hover) .cursor {
   -webkit-mask: url(#hero-splash-mask);
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-out);
+}
+
+.hero-video--reveal.is-ready {
+  opacity: 1;
 }
 
 .hero-content {

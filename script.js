@@ -152,6 +152,16 @@ function initHeroSplash() {
   if (!hero || !circle) return;
   if (window.matchMedia('(hover: none)').matches) return; // skip on touch
 
+  const revealVideo = document.getElementById('hero-video-reveal');
+  if (revealVideo) {
+    const source = document.createElement('source');
+    source.src = 'assets/lilyOverlay.mp4';
+    source.type = 'video/mp4';
+    revealVideo.appendChild(source);
+    revealVideo.load();
+    revealVideo.classList.add('is-ready');
+  }
+
   const SPLASH_RADIUS = 180; // px
 
   const turbulence = document.getElementById('hero-splash-turbulence');
