@@ -768,6 +768,55 @@ body:has(button:hover) .cursor {
 }
 
 /* ============================================================
+   ACCORDION SECTIONS (Certificates / Work Experience)
+   ============================================================ */
+.section--subtle { padding: 32px 0; }
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  border-top: 1px solid var(--border-subtle);
+  padding: 20px 0;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+.accordion-header:hover .eyebrow-label { color: var(--text); }
+
+.accordion-toggle {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text-dim);
+  transition: transform 0.3s var(--ease-out);
+}
+
+.accordion-header.is-open .accordion-toggle { transform: rotate(45deg); }
+
+.accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s var(--ease-out);
+}
+
+.accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 4px 0 20px;
+}
+
+.accordion-list li {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-dim);
+}
+
+/* ============================================================
    STACK
    ============================================================ */
 .stack-grid {
