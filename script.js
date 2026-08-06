@@ -240,3 +240,25 @@ function initHeroSplash() {
 }
 
 initHeroSplash();
+
+/* ============================================================
+   ACCORDION SECTIONS (Certificates / Work Experience)
+   ============================================================ */
+function initAccordions() {
+  const headers = document.querySelectorAll('.accordion-header');
+
+  headers.forEach(header => {
+    const panel = document.getElementById(header.getAttribute('aria-controls'));
+    if (!panel) return;
+
+    if (prefersReducedMotion.matches) panel.style.transition = 'none';
+
+    header.addEventListener('click', () => {
+      const isOpen = header.classList.toggle('is-open');
+      header.setAttribute('aria-expanded', String(isOpen));
+      panel.style.maxHeight = isOpen ? `${panel.scrollHeight}px` : '0';
+    });
+  });
+}
+
+initAccordions();
