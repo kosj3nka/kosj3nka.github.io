@@ -695,6 +695,14 @@ body:has(button:hover) .cursor {
 .card--small   { min-height: 280px; }
 .card--wide    { min-height: 180px; }
 
+/* Work groups (Web / Mobile / Other) */
+.work-group + .work-group { margin-top: 64px; }
+
+.work-group-label { margin-bottom: 20px; }
+
+/* A wide card that is the sole item in its row (no horizontal split layout) */
+.card--wide.card--solo { min-height: 240px; }
+
 /* ============================================================
    PROCESS
    ============================================================ */
