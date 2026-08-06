@@ -770,7 +770,7 @@ body:has(button:hover) .cursor {
 /* ============================================================
    ACCORDION SECTIONS (Certificates / Work Experience)
    ============================================================ */
-.section--subtle { padding: 32px 0; }
+.section.section--subtle { padding: 32px 0; }
 
 .accordion-header {
   display: flex;
@@ -1035,7 +1035,8 @@ body:has(button:hover) .cursor {
   .card--large,
   .card--medium,
   .card--small,
-  .card--wide { grid-column: span 1; min-height: unset; }
+  .card--wide,
+  .card--wide.card--solo { grid-column: span 1; min-height: unset; }
 
   .card-core--horizontal {
     flex-direction: column;
