@@ -40,14 +40,18 @@ initCursor();
    NAV SCROLL BEHAVIOR
    ============================================================ */
 const nav = document.getElementById('nav');
+const heroSection = document.querySelector('.hero');
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 40) {
-    nav.classList.add('scrolled');
-  } else {
-    nav.classList.remove('scrolled');
-  }
-}, { passive: true });
+function updateNavState() {
+  const outsideHero = heroSection
+    ? heroSection.getBoundingClientRect().bottom <= 0
+    : window.scrollY > 40;
+
+  nav.classList.toggle('scrolled', outsideHero);
+}
+
+window.addEventListener('scroll', updateNavState, { passive: true });
+updateNavState();
 
 /* ============================================================
    MOBILE MENU
@@ -179,6 +183,13 @@ function initHeroSplash() {
   let targetR = 0;
   let splashR = 0;
 
+  const TRAIL_LERP = 0.3;
+  const TRAIL_STEP_SCALE = 0.72;
+  const trail = [1, 2, 3, 4]
+    .map(i => document.getElementById(`hero-splash-trail-${i}`))
+    .filter(Boolean)
+    .map(el => ({ el, x: targetX, y: targetY, r: 0 }));
+
   hero.addEventListener('mousemove', e => {
     heroRect = hero.getBoundingClientRect();
     targetX = e.clientX - heroRect.left;
@@ -197,6 +208,19 @@ function initHeroSplash() {
     circle.setAttribute('cy', splashY.toFixed(1));
     circle.setAttribute('r', splashR.toFixed(1));
 
+    let prevX = splashX, prevY = splashY, prevR = splashR;
+    trail.forEach(node => {
+      node.x += (prevX - node.x) * TRAIL_LERP;
+      node.y += (prevY - node.y) * TRAIL_LERP;
+      node.r += (prevR * TRAIL_STEP_SCALE - node.r) * TRAIL_LERP;
+
+      node.el.setAttribute('cx', node.x.toFixed(1));
+      node.el.setAttribute('cy', node.y.toFixed(1));
+      node.el.setAttribute('r', Math.max(0, node.r).toFixed(1));
+
+      prevX = node.x; prevY = node.y; prevR = node.r;
+    });
+
     requestAnimationFrame(animateSplash);
   }
 
@@ -206,8 +230,8 @@ function initHeroSplash() {
     let t = 0;
     function animateTurbulence() {
       t += 0.0015;
-      const fx = (0.015 + Math.sin(t) * 0.004).toFixed(4);
-      const fy = (0.02 + Math.cos(t * 0.8) * 0.004).toFixed(4);
+      const fx = (0.008 + Math.sin(t) * 0.002).toFixed(4);
+      const fy = (0.011 + Math.cos(t * 0.8) * 0.002).toFixed(4);
       turbulence.setAttribute('baseFrequency', `${fx} ${fy}`);
       requestAnimationFrame(animateTurbulence);
     }

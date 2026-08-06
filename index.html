@@ -7,7 +7,7 @@
   <meta name="description" content="Product builder and creative technologist. Design, code, strategy — all of it, simultaneously.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=VT323&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400&family=Luxurious+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
   <!-- Nav -->
   <nav class="nav" id="nav">
     <div class="nav-pill">
-      <a href="#" class="nav-logo">Gita</a>
+      <a href="#" class="nav-logo"><img src="assets/lilyIcon.png" alt="Gita" class="nav-logo-icon"></a>
       <div class="nav-links">
         <a href="#work">Work</a>
         <a href="#process">Process</a>
@@ -55,28 +55,32 @@
     </video>
     <svg class="hero-splash-defs" aria-hidden="true" focusable="false">
       <defs>
-        <filter id="hero-splash-filter" x="-60%" y="-60%" width="220%" height="220%">
-          <feTurbulence id="hero-splash-turbulence" type="fractalNoise" baseFrequency="0.015 0.02" numOctaves="2" seed="7" result="noise" />
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="60" xChannelSelector="R" yChannelSelector="G" result="displaced" />
-          <feGaussianBlur in="displaced" stdDeviation="16" />
+        <filter id="hero-splash-filter" x="-120%" y="-120%" width="340%" height="340%">
+          <feTurbulence id="hero-splash-turbulence" type="fractalNoise" baseFrequency="0.008 0.011" numOctaves="3" seed="7" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="150" xChannelSelector="R" yChannelSelector="G" result="displaced" />
+          <feGaussianBlur in="displaced" stdDeviation="14" />
+        </filter>
+        <filter id="hero-splash-trail-filter" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="14" />
         </filter>
         <mask id="hero-splash-mask">
+          <circle id="hero-splash-trail-4" cx="0" cy="0" r="0" fill="#ffffff" fill-opacity="0.12" filter="url(#hero-splash-trail-filter)" />
+          <circle id="hero-splash-trail-3" cx="0" cy="0" r="0" fill="#ffffff" fill-opacity="0.22" filter="url(#hero-splash-trail-filter)" />
+          <circle id="hero-splash-trail-2" cx="0" cy="0" r="0" fill="#ffffff" fill-opacity="0.35" filter="url(#hero-splash-trail-filter)" />
+          <circle id="hero-splash-trail-1" cx="0" cy="0" r="0" fill="#ffffff" fill-opacity="0.55" filter="url(#hero-splash-trail-filter)" />
           <circle id="hero-splash-circle" cx="0" cy="0" r="0" fill="#ffffff" filter="url(#hero-splash-filter)" />
         </mask>
       </defs>
     </svg>
     <div class="hero-video-overlay" aria-hidden="true"></div>
     <div class="container hero-content">
-      <div class="hero-eyebrow reveal">
-        <span class="eyebrow-dot"></span>
-        Available for partnerships
-      </div>
+  
       <h1 class="hero-headline reveal">
-        Product<br>Builder.
+        Gita Projić
       </h1>
-      <p class="hero-role reveal">The co-founder <span class="accent">you need.</span></p>
+      <p class="hero-role reveal"><span class="accent">portfolio</span></p>
       <p class="hero-body reveal">
-        Product, design, and code — built together. Zagreb-based, working globally.
+        Product Engeneer • System Design • AI Native • Full Stack • Marketing
       </p>
       <div class="hero-actions reveal">
         <a href="#work" class="btn-primary">
@@ -248,47 +252,7 @@
     </div>
   </section>
 
-  <!-- Process -->
-  <section class="section" id="process">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="eyebrow-label">Process</p>
-        <h2 class="section-title">Two ways to work together.</h2>
-      </div>
-
-      <div class="process-grid">
-        <div class="process-card reveal" data-delay="0">
-          <div class="card-shell">
-            <div class="card-core">
-              <div class="process-num">01</div>
-              <h3>Build with you</h3>
-              <p>You have the idea. I come in early, shape the product, and execute across design, code, and brand. Equity or hybrid.</p>
-              <ul class="process-list">
-                <li>Strategy + competitive research</li>
-                <li>Design system + brand</li>
-                <li>Full-stack build and launch</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="process-card reveal" data-delay="120">
-          <div class="card-shell">
-            <div class="card-core">
-              <div class="process-num">02</div>
-              <h3>Build for you</h3>
-              <p>You know what you need. I deliver at co-founder quality — challenging the spec when it's wrong, not just shipping it.</p>
-              <ul class="process-list">
-                <li>Web + mobile development</li>
-                <li>Marketing systems + automation</li>
-                <li>Brand and visual identity</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+ 
 
   <!-- Stack -->
   <section class="section" id="stack">
