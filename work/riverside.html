@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riverside Cetina — Gita</title>
+  <meta name="description" content="Horseback riding tours along the Cetina river near Split — a cinematic, booking-focused page built around drone visuals.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=JetBrains+Mono:wght@400&family=Luxurious+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursor-dot"></div>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-pill">
+      <a href="../index.html" class="nav-logo"><img src="../assets/lilyIcon.png" alt="Gita" class="nav-logo-icon"></a>
+      <div class="nav-links">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#process">Process</a>
+        <a href="../index.html#about">About</a>
+      </div>
+      <a href="../index.html#contact" class="nav-cta">
+        Let's build
+        <span class="btn-arrow-wrap"><span>↗</span></span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Work Detail -->
+  <section class="section work-detail">
+    <div class="work-detail-split">
+      <div class="work-detail-media work-detail-media-static">
+        <img class="work-detail-video work-detail-image-full" src="../assets/mockups/riverside-cetina.png" alt="Full page preview of the Riverside Cetina website">
+      </div>
+
+      <div class="work-detail-content">
+        <a href="../index.html#work" class="work-detail-back">← Back to work</a>
+
+        <div class="work-detail-header reveal">
+          <p class="work-detail-tags">Tourism · Booking Page · Drone Visuals</p>
+          <h1>Riverside Cetina</h1>
+          <p class="work-detail-lede">Horseback riding tours along the Cetina river near Split — a cinematic, booking-focused page built around drone visuals.</p>
+          <a href="https://riverside-cetina.vercel.app/" target="_blank" rel="noopener" class="btn-primary">
+            Visit site
+            <span class="btn-arrow-wrap"><span>↗</span></span>
+          </a>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Summary</p>
+          <h2>A single scroll from drone shot to booking</h2>
+          <p>Riverside Cetina is a marketing site for beginner-friendly horseback riding along the Cetina river in Sinj. A full-screen drone loop opens the page, then a single anchored scroll walks through the ride, the horses, and the river trail before landing on booking.</p>
+          <p>No CMS, no dashboard — the whole thing is content components and a booking button, sized to what a two-person tour operator actually needs on day one.</p>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Tech Stack</p>
+          <div class="work-detail-tech">
+            <span class="tag">Next.js (App Router)</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Tailwind CSS v4</span>
+            <span class="tag">Framer Motion</span>
+            <span class="tag">Vercel</span>
+          </div>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Details</p>
+          <ul class="process-list">
+            <li>One component per section — Hero, Intro, Experience, Horses, Gallery, GiftCard, Book, Footer — each reveal-on-scroll with Framer Motion</li>
+            <li>A river-themed palette (Cetina green, river teal, leather rust, sand, cream) set once as design tokens and reused across every section</li>
+            <li>Booking starts at the cheapest possible stage — a WhatsApp deep link straight to the two owners — with Cal.com and a Supabase-backed flow scoped as later stages, not built up front</li>
+            <li>Compressed drone footage with a poster still so the hero paints instantly instead of waiting on video weight</li>
+          </ul>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Learning Experience</p>
+          <p>The build order mattered more than any individual component: ship the hero and a working booking button first, prove the deploy pipeline, then layer in the horses, trail, and gallery — rather than polishing sections that don't yet have a live URL behind them.</p>
+          <p>Staging the booking flow (WhatsApp now, Cal.com if it gets busy, Supabase + Stripe only if it outgrows that) was the clearest lesson in not over-building ahead of real demand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-name">Gita</p>
+      <p class="footer-copy">Zagreb, Croatia · 2025</p>
+      <div class="footer-links">
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

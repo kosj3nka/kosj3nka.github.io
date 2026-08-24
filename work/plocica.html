@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plocica — Gita</title>
+  <meta name="description" content="A handmade cement-tile studio's brand site — bold pattern-driven visuals built to make the craft itself the hero.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=JetBrains+Mono:wght@400&family=Luxurious+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursor-dot"></div>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-pill">
+      <a href="../index.html" class="nav-logo"><img src="../assets/lilyIcon.png" alt="Gita" class="nav-logo-icon"></a>
+      <div class="nav-links">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#process">Process</a>
+        <a href="../index.html#about">About</a>
+      </div>
+      <a href="../index.html#contact" class="nav-cta">
+        Let's build
+        <span class="btn-arrow-wrap"><span>↗</span></span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Work Detail -->
+  <section class="section work-detail">
+    <div class="work-detail-split">
+      <div class="work-detail-media work-detail-media-static">
+        <img class="work-detail-video work-detail-image-full" src="../assets/mockups/plocica-ggbnaqh7c7h0hgh0.png" alt="Full page preview of the Plocica website">
+      </div>
+
+      <div class="work-detail-content">
+        <a href="../index.html#work" class="work-detail-back">← Back to work</a>
+
+        <div class="work-detail-header reveal">
+          <p class="work-detail-tags">Handmade Tiles · Brand Site · Pattern Gallery</p>
+          <h1>Plocica</h1>
+          <p class="work-detail-lede">A handmade cement-tile studio's brand site — bold pattern-driven visuals built to make the craft itself the hero.</p>
+          <a href="https://plocica-ggbnaqh7c7h0hgh0.westeurope-01.azurewebsites.net/" target="_blank" rel="noopener" class="btn-primary">
+            Visit site
+            <span class="btn-arrow-wrap"><span>↗</span></span>
+          </a>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Summary</p>
+          <h2>A catalogue the studio owns end to end</h2>
+          <p>Plocica is the brand site for a handmade cement-tile studio run by two owners — Lorena on form, colour, and composition; Mihael on production. The site treats the tile patterns as the design system: bold, colour-blocked grids stand in for decoration, closer to browsing a physical showroom than scrolling a brochure.</p>
+          <p>Everything the owners need to keep current — shapes, colours, finished projects — lives behind an admin panel, so the catalogue stays theirs to run without a developer in the loop.</p>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Tech Stack</p>
+          <div class="work-detail-tech">
+            <span class="tag">ASP.NET Core Razor Pages</span>
+            <span class="tag">.NET 8</span>
+            <span class="tag">Entity Framework Core</span>
+            <span class="tag">Azure SQL</span>
+            <span class="tag">Azure Blob Storage</span>
+            <span class="tag">ASP.NET Core Identity</span>
+            <span class="tag">Azure App Service</span>
+          </div>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Details</p>
+          <ul class="process-list">
+            <li>Admin panel with CRUD over shapes, colours (image or colour picker), and projects, including multi-image upload straight to Blob Storage</li>
+            <li>Public pages — collections, projects, about, FAQ, contact — read from the same EF Core models the admin panel edits, so nothing goes stale</li>
+            <li>A Google Form embed for the contact flow, routing inquiries straight to the studio's inbox pre-sorted, instead of building a custom form backend</li>
+            <li>No JS framework on the frontend — vanilla JS handles the hero animation, keeping the public site light</li>
+          </ul>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Learning Experience</p>
+          <p>The key decision was recognizing that a JSON-in-repo content model wouldn't survive contact with two owners who needed to upload photos themselves — that requirement alone justified a real database and Blob Storage over a simpler static approach.</p>
+          <p>It was also a reminder that Azure App Service's local disk is ephemeral: images and data both had to live in dedicated services (Azure SQL, Blob Storage) rather than anywhere that gets wiped on every deploy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-name">Gita</p>
+      <p class="footer-copy">Zagreb, Croatia · 2025</p>
+      <div class="footer-links">
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

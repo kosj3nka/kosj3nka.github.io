@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keks Point — Gita</title>
+  <meta name="description" content="A playful cookie-bakery landing page with hand-drawn branding, built to move visitors straight from the homepage to ordering.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=JetBrains+Mono:wght@400&family=Luxurious+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursor-dot"></div>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-pill">
+      <a href="../index.html" class="nav-logo"><img src="../assets/lilyIcon.png" alt="Gita" class="nav-logo-icon"></a>
+      <div class="nav-links">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#process">Process</a>
+        <a href="../index.html#about">About</a>
+      </div>
+      <a href="../index.html#contact" class="nav-cta">
+        Let's build
+        <span class="btn-arrow-wrap"><span>↗</span></span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Work Detail -->
+  <section class="section work-detail">
+    <div class="work-detail-split">
+      <div class="work-detail-media work-detail-media-static">
+        <img class="work-detail-video work-detail-image-full" src="../assets/mockups/kekspoint-five.vercel.app_.png" alt="Full page preview of the Keks Point website">
+      </div>
+
+      <div class="work-detail-content">
+        <a href="../index.html#work" class="work-detail-back">← Back to work</a>
+
+        <div class="work-detail-header reveal">
+          <p class="work-detail-tags">Bakery · Landing Page · Online Ordering</p>
+          <h1>Keks Point</h1>
+          <p class="work-detail-lede">A playful cookie-bakery landing page with hand-drawn branding, built to move visitors straight from the homepage to ordering.</p>
+          <a href="https://kekspoint-five.vercel.app/" target="_blank" rel="noopener" class="btn-primary">
+            Visit site
+            <span class="btn-arrow-wrap"><span>↗</span></span>
+          </a>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Summary</p>
+          <h2>A menu the owner edits, not a developer</h2>
+          <p>Keks Point is a cookie-bakery landing page with hand-drawn branding and a bright, sugary palette that carries the shop's in-person personality onto the screen, with every section pointed at one action — ordering.</p>
+          <p>Behind the storefront sits a small owner-facing admin dashboard, so the menu and the homepage's featured picks can change without touching code.</p>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Tech Stack</p>
+          <div class="work-detail-tech">
+            <span class="tag">Next.js</span>
+            <span class="tag">Vercel KV</span>
+            <span class="tag">Vercel Blob</span>
+            <span class="tag">Vitest</span>
+            <span class="tag">Testing Library</span>
+          </div>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Details</p>
+          <ul class="process-list">
+            <li>Admin dashboard with full cookie CRUD, backed by Vercel KV for menu data and Vercel Blob for uploaded product photos</li>
+            <li>A featured-carousel picker that enforces exactly three homepage picks — selecting a fourth replaces the first, rather than needing a manual reorder</li>
+            <li>Cookie-based auth in middleware gating every <code>/admin</code> route before it reaches the dashboard</li>
+            <li>Vitest + Testing Library covering the admin components so menu edits don't silently break the storefront</li>
+          </ul>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Learning Experience</p>
+          <p>The interesting problem wasn't the storefront — it was designing an admin surface simple enough for a non-technical bakery owner to run daily, without a database server to provision or a CMS to configure.</p>
+          <p>Vercel KV plus Blob turned out to be the right amount of infrastructure: enough to persist menu edits and images safely, light enough to stay invisible to the person actually using it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-name">Gita</p>
+      <p class="footer-copy">Zagreb, Croatia · 2025</p>
+      <div class="footer-links">
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

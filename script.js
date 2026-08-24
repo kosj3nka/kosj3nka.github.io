@@ -54,43 +54,6 @@ window.addEventListener('scroll', updateNavState, { passive: true });
 updateNavState();
 
 /* ============================================================
-   MOBILE MENU
-   ============================================================ */
-const hamburger   = document.getElementById('hamburger');
-const menuOverlay = document.getElementById('menu-overlay');
-let menuOpen = false;
-
-function openMenu() {
-  menuOpen = true;
-  hamburger.classList.add('active');
-  hamburger.setAttribute('aria-label', 'Close menu');
-  menuOverlay.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeMenu() {
-  menuOpen = false;
-  hamburger.classList.remove('active');
-  hamburger.setAttribute('aria-label', 'Open menu');
-  menuOverlay.classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-hamburger.addEventListener('click', () => {
-  menuOpen ? closeMenu() : openMenu();
-});
-
-// Close on escape
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && menuOpen) closeMenu();
-});
-
-// Close when clicking outside the menu inner
-menuOverlay.addEventListener('click', e => {
-  if (e.target === menuOverlay) closeMenu();
-});
-
-/* ============================================================
    SCROLL REVEAL (IntersectionObserver)
    ============================================================ */
 const revealObserver = new IntersectionObserver((entries) => {
@@ -262,3 +225,29 @@ function initAccordions() {
 }
 
 initAccordions();
+
+/* ============================================================
+   CLICKABLE GALLERY CARDS (Work section)
+   ============================================================ */
+function initGalleryCards() {
+  document.querySelectorAll('.gallery-card[data-href]').forEach(card => {
+    const dest = card.dataset.href;
+
+    const go = () => { window.location.href = dest; };
+
+    card.addEventListener('click', e => {
+      if (e.target.closest('a')) return; // let the VIEW link handle itself
+      go();
+    });
+
+    card.addEventListener('keydown', e => {
+      if (e.target !== card) return; // ignore keydown bubbling from the VIEW link
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        go();
+      }
+    });
+  });
+}
+
+initGalleryCards();

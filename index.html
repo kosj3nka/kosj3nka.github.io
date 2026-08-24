@@ -7,7 +7,7 @@
   <meta name="description" content="Product builder and creative technologist. Design, code, strategy — all of it, simultaneously.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400&family=Luxurious+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=JetBrains+Mono:wght@400&family=Luxurious+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,22 +29,8 @@
         Let's build
         <span class="btn-arrow-wrap"><span>↗</span></span>
       </a>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <span></span>
-        <span></span>
-      </button>
     </div>
   </nav>
-
-  <!-- Mobile menu -->
-  <div class="menu-overlay" id="menu-overlay">
-    <div class="menu-inner">
-      <a href="#work" class="menu-link" onclick="closeMenu()">Work</a>
-      <a href="#process" class="menu-link" onclick="closeMenu()">Process</a>
-      <a href="#about" class="menu-link" onclick="closeMenu()">About</a>
-      <a href="#contact" class="menu-link menu-link--accent" onclick="closeMenu()">Let's build →</a>
-    </div>
-  </div>
 
   <!-- Hero -->
   <section class="hero">
@@ -96,122 +82,109 @@
   <section class="section" id="work">
     <div class="container">
       <div class="section-header reveal">
-        <p class="eyebrow-label">Selected Work</p>
+
         <h2 class="section-title">Projects that prove the range.</h2>
       </div>
 
       <div class="work-group">
-        <p class="eyebrow-label work-group-label">Web</p>
-        <div class="bento">
+        <p class="eyebrow-label work-group-label">Live Projects</p>
+        <div class="work-gallery">
 
-          <!-- Design Portal — large -->
-          <article class="card card--large reveal" data-delay="0">
-            <div class="card-shell">
-              <div class="card-core">
-                <div class="card-top">
-                  <div class="card-tags">
-                    <span class="tag">Product</span>
-                    <span class="tag">Web</span>
-                    <span class="tag">Brand</span>
+          <div class="gallery-card reveal" data-delay="0" data-href="work/workshop.html" role="link" tabindex="0">
+            <div class="gallery-shell">
+              <div class="gallery-core">
+                <div class="gallery-thumb">
+                  <img src="assets/work/workshop.jpg" alt="Workshop Zagreb website preview" loading="lazy">
+                </div>
+                <div class="gallery-body">
+                  <div class="gallery-top">
+                    <h3>Workshop</h3>
+                    <a href="https://workshopzagreb.com" target="_blank" rel="noopener" class="gallery-visit">VIEW</a>
                   </div>
-                  <a href="#" class="card-link">Case study ↗</a>
-                </div>
-                <div class="card-body">
-                  <h3>Design Portal</h3>
-                  <p>Content-to-commerce platform for interior design and physical art. Market research, revenue model, full-stack build — solo.</p>
-                </div>
-                <div class="card-tech">
-                  <span>React</span>
-                  <span>Supabase</span>
-                  <span>PostgreSQL</span>
-                  <span>Revenue Strategy</span>
-                  <span>Product Design</span>
+                  <p class="gallery-tag">Café &amp; Workshops · Editorial Layout · Newsletter</p>
+                  <p>A cozy neighborhood workshop and coffee spot in Zagreb — a warm, editorial brand site built around the daily rhythm from mornings to afternoons.</p>
                 </div>
               </div>
             </div>
-          </article>
+          </div>
 
-          <!-- Business Finder -->
-          <article class="card card--medium reveal" data-delay="80">
-            <div class="card-shell">
-              <div class="card-core">
-                <div class="card-top">
-                  <div class="card-tags">
-                    <span class="tag">Web</span>
-                    <span class="tag">Marketing</span>
+          <div class="gallery-card reveal" data-delay="1" data-href="work/kekspoint.html" role="link" tabindex="0">
+            <div class="gallery-shell">
+              <div class="gallery-core">
+                <div class="gallery-thumb">
+                  <img src="assets/work/kekspoint.jpg" alt="Keks Point website preview" loading="lazy">
+                </div>
+                <div class="gallery-body">
+                  <div class="gallery-top">
+                    <h3>Keks Point</h3>
+                    <a href="https://kekspoint-five.vercel.app/" target="_blank" rel="noopener" class="gallery-visit">VIEW</a>
                   </div>
-                  <a href="#" class="card-link">↗</a>
-                </div>
-                <div class="card-body">
-                  <h3>Business Finder</h3>
-                  <p>Surfaces local businesses with no web presence, for lead generation. Built on the Maps API.</p>
-                </div>
-                <div class="card-tech">
-                  <span>React</span>
-                  <span>Maps API</span>
-                  <span>Lead Gen</span>
+                  <p class="gallery-tag">Bakery · Landing Page · Online Ordering</p>
+                  <p>A playful cookie-bakery landing page with hand-drawn branding, built to move visitors straight from the homepage to ordering.</p>
                 </div>
               </div>
             </div>
-          </article>
+          </div>
 
-          <!-- CSS Lab — accent card -->
-          <article class="card card--wide card--solo reveal" data-delay="0">
-            <div class="card-shell card-shell--accent">
-              <div class="card-core card-core--accent">
-                <div class="card-top">
-                  <div class="card-tags">
-                    <span class="tag tag--accent">Design</span>
-                    <span class="tag tag--accent">Craft</span>
+          <div class="gallery-card reveal" data-delay="0" data-href="work/riverside.html" role="link" tabindex="0">
+            <div class="gallery-shell">
+              <div class="gallery-core">
+                <div class="gallery-thumb">
+                  <img src="assets/work/riverside.jpg" alt="Riverside Cetina website preview" loading="lazy">
+                </div>
+                <div class="gallery-body">
+                  <div class="gallery-top">
+                    <h3>Riverside Cetina</h3>
+                    <a href="https://riverside-cetina.vercel.app/" target="_blank" rel="noopener" class="gallery-visit">VIEW</a>
                   </div>
-                  <a href="#" class="card-link card-link--accent">↗</a>
-                </div>
-                <div class="card-body">
-                  <h3>CSS Lab</h3>
-                  <p>Animation and interaction experiments — what the browser can feel like.</p>
-                </div>
-                <div class="card-tech card-tech--accent">
-                  <span>CSS</span>
-                  <span>Animation</span>
-                  <span>Motion</span>
+                  <p class="gallery-tag">Tourism · Booking Page · Visual experience</p>
+                  <p>Horseback riding tours along the Cetina river near Split — a cinematic, booking-focused page built around drone visuals.</p>
                 </div>
               </div>
             </div>
-          </article>
+          </div>
+
+          <div class="gallery-card reveal" data-delay="0" data-href="work/plocica.html" role="link" tabindex="0">
+            <div class="gallery-shell">
+              <div class="gallery-core">
+                <div class="gallery-thumb">
+                  <img src="assets/work/plocica.jpg" alt="Plocica website preview" loading="lazy">
+                </div>
+                <div class="gallery-body">
+                  <div class="gallery-top">
+                    <h3>Pločica</h3>
+                    <a href="https://plocica-ggbnaqh7c7h0hgh0.westeurope-01.azurewebsites.net/" target="_blank" rel="noopener" class="gallery-visit">VIEW</a>
+                  </div>
+                  <p class="gallery-tag">Handmade Tiles · Brand Site · Portfolio</p>
+                  <p>A handmade cement-tile studio's brand site — bold pattern-driven visuals built to make the craft itself the hero.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-card gallery-card--full reveal" data-delay="1">
+            <div class="gallery-shell">
+              <div class="gallery-core">
+                <div class="gallery-thumb">
+                  <span class="gallery-pill">Work in progress</span>
+                  <img src="assets/work/editio.jpg" alt="Editio website preview" loading="lazy">
+                </div>
+                <div class="gallery-body">
+                  <div class="gallery-top">
+                    <h3>Editio</h3>
+                  </div>
+                  <p class="gallery-tag">Editorial · content to commerce · shop</p>
+                  <p>A Croatian lifestyle and hosting editorial platform — destinations, culture, and creators, wrapped in a quiet magazine layout.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
 
         </div>
       </div>
 
-      <div class="work-group">
-        <p class="eyebrow-label work-group-label">Mobile</p>
-        <div class="bento">
-
-          <!-- Screen Time App -->
-          <article class="card card--wide card--solo reveal" data-delay="0">
-            <div class="card-shell">
-              <div class="card-core">
-                <div class="card-top">
-                  <div class="card-tags">
-                    <span class="tag">Mobile</span>
-                    <span class="tag">UX Design</span>
-                  </div>
-                  <a href="#" class="card-link">View ↗</a>
-                </div>
-                <div class="card-body">
-                  <h3>Screen Time App</h3>
-                  <p>Makes screen limits feel like a game. Original pixel art character system, built from scratch.</p>
-                </div>
-                <div class="card-tech">
-                  <span>Mobile</span>
-                  <span>Pixel Art</span>
-                  <span>UX</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
 
       <div class="work-group">
         <p class="eyebrow-label work-group-label">Other</p>
@@ -240,129 +213,39 @@
             </div>
           </article>
 
-          <!-- Workshop Café — wide -->
-          <article class="card card--wide reveal" data-delay="80">
-            <div class="card-shell">
-              <div class="card-core card-core--horizontal">
-                <div class="card-wide-left">
-                  <div class="card-tags">
-                    <span class="tag">Marketing</span>
-                    <span class="tag">Automation</span>
-                  </div>
-                  <h3>Workshop Café<br>Email System</h3>
-                  <p>Email automation for a real client — announcement flows, signup triggers, segmented lists.</p>
-                </div>
-                <div class="card-wide-right">
-                  <div class="card-tech">
-                    <span>Email Automation</span>
-                    <span>Segmentation</span>
-                    <span>Marketing Systems</span>
-                  </div>
-                  <a href="#" class="card-link">Case study ↗</a>
-                </div>
-              </div>
-            </div>
-          </article>
 
         </div>
       </div><!-- /work groups -->
     </div>
   </section>
 
-  <!-- Certificates -->
-  <section class="section section--subtle" id="certificates">
-    <div class="container">
-      <button class="accordion-header" aria-expanded="false" aria-controls="certificates-panel">
-        <span class="eyebrow-label">Certificates</span>
-        <span class="accordion-toggle" aria-hidden="true">+</span>
-      </button>
-      <div class="accordion-panel" id="certificates-panel">
-        <ul class="accordion-list">
-          <li>Claude</li>
-          <li>C#</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Work Experience -->
-  <section class="section section--subtle" id="experience">
-    <div class="container">
-      <button class="accordion-header" aria-expanded="false" aria-controls="experience-panel">
-        <span class="eyebrow-label">Work Experience</span>
-        <span class="accordion-toggle" aria-hidden="true">+</span>
-      </button>
-      <div class="accordion-panel" id="experience-panel">
-        <ul class="accordion-list">
-          <li>Zara — Employee</li>
-          <li>McDonald's — Employee</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stack -->
-  <section class="section" id="stack">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="eyebrow-label">Stack</p>
-        <h2 class="section-title">What I actually use.</h2>
+  <!-- Certificates & Work Experience -->
+  <section class="section section--subtle" id="credentials">
+    <div class="container accordion-columns">
+      <div class="accordion-item" id="certificates">
+        <button class="accordion-header" aria-expanded="false" aria-controls="certificates-panel">
+          <span class="eyebrow-label">Certificates</span>
+          <span class="accordion-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-panel" id="certificates-panel">
+          <ul class="accordion-list">
+            <li>Claude Code Certificate</li>
+            <li>Microsoft C# Certificate</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="stack-grid reveal">
-        <div class="stack-col">
-          <p class="stack-label">Frontend</p>
-          <div class="stack-items">
-            <span>React</span>
-            <span>HTML / CSS</span>
-            <span>JavaScript</span>
-            <span>Tailwind</span>
-          </div>
-        </div>
-        <div class="stack-col">
-          <p class="stack-label">Backend</p>
-          <div class="stack-items">
-            <span>Go</span>
-            <span>Supabase</span>
-            <span>PostgreSQL</span>
-            <span>Node.js</span>
-          </div>
-        </div>
-        <div class="stack-col">
-          <p class="stack-label">Systems</p>
-          <div class="stack-items">
-            <span>Linux</span>
-            <span>Networking / TUN</span>
-            <span>Windows</span>
-            <span>Arduino</span>
-          </div>
-        </div>
-        <div class="stack-col">
-          <p class="stack-label">Design</p>
-          <div class="stack-items">
-            <span>Figma</span>
-            <span>CSS Animation</span>
-            <span>Pixel Art</span>
-            <span>Brand Systems</span>
-          </div>
-        </div>
-        <div class="stack-col">
-          <p class="stack-label">Marketing</p>
-          <div class="stack-items">
-            <span>Email Automation</span>
-            <span>Google APIs</span>
-            <span>SEO</span>
-            <span>Analytics</span>
-          </div>
-        </div>
-        <div class="stack-col">
-          <p class="stack-label">Product</p>
-          <div class="stack-items">
-            <span>Market Research</span>
-            <span>Revenue Modeling</span>
-            <span>Competitive Analysis</span>
-            <span>Roadmapping</span>
-          </div>
+      <div class="accordion-item" id="experience">
+        <button class="accordion-header" aria-expanded="false" aria-controls="experience-panel">
+          <span class="eyebrow-label">Work Experience</span>
+          <span class="accordion-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-panel" id="experience-panel">
+          <ul class="accordion-list">
+            <li>Summer jobs:</li>
+            <li>Zara — Employee</li>
+            <li>McDonald's — Employee</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -374,16 +257,20 @@
       <div class="about-grid reveal">
         <div class="about-left">
           <p class="eyebrow-label">About</p>
-          <h2 class="section-title">Builder<br>from<br>Zagreb.</h2>
+          <h2 class="section-title">Student<br>freelancer.</h2>
+          <div class="about-links">
+            <a href="mailto:gitaprojic@gmail.com" class="about-link">gitaprojic@gmail.com ↗</a>
+          </div>
         </div>
         <div class="about-right">
-          <p>I'm 17, based in Zagreb. I've shipped a content-to-commerce platform, a custom VPN in Go, marketing systems, and mobile apps — usually solo.</p>
-          <p>I'm not a specialist, I'm a builder — design, engineering, product, and brand, done together. If you're building something worth building, reach out.</p>
-          <div class="about-links">
-            <a href="mailto:your@email.com" class="about-link">your@email.com ↗</a>
-            <a href="https://github.com/yourusername" target="_blank" class="about-link">GitHub ↗</a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="about-link">LinkedIn ↗</a>
-          </div>
+          <p>I'm a 18 year old high school student, based in Zagreb.</p>
+          <p>I go to Technical school Ruđera Boškovića with plans on going to FOI university.</p>
+          <p>I always loved design, finding solutions to problems and working on project that feel whole - working from top to bottom with a vision.
+            I belive businesses should always have a visual identity and strong marketing and internal systems; with that, everything else is easier.
+            <br>So that is exactly what I can do for you!
+
+          </p>
+          
         </div>
       </div>
     </div>
@@ -398,7 +285,7 @@
           Have an idea?<br>
           <span class="accent">Let's build it.</span>
         </h2>
-        <p class="contact-sub">Open to partnerships and contract work. I respond fast.</p>
+        <p class="contact-sub">Open to partnerships!</p>
         <a href="mailto:your@email.com" class="btn-primary btn-primary--large">
           Get in touch
           <span class="btn-arrow-wrap"><span>↗</span></span>
@@ -412,10 +299,7 @@
     <div class="container footer-inner">
       <p class="footer-name">Gita</p>
       <p class="footer-copy">Zagreb, Croatia · 2025</p>
-      <div class="footer-links">
-        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-      </div>
+
     </div>
   </footer>
 

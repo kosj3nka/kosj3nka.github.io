@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshop — Gita</title>
+  <meta name="description" content="A cozy neighborhood workshop and coffee spot in Zagreb — a warm, editorial brand site built around the daily rhythm from mornings to afternoons.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=JetBrains+Mono:wght@400&family=Luxurious+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursor-dot"></div>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-pill">
+      <a href="../index.html" class="nav-logo"><img src="../assets/lilyIcon.png" alt="Gita" class="nav-logo-icon"></a>
+      <div class="nav-links">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#process">Process</a>
+        <a href="../index.html#about">About</a>
+      </div>
+      <a href="../index.html#contact" class="nav-cta">
+        Let's build
+        <span class="btn-arrow-wrap"><span>↗</span></span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Work Detail -->
+  <section class="section work-detail">
+    <div class="work-detail-split">
+      <div class="work-detail-media work-detail-media-static">
+        <img class="work-detail-video work-detail-image-full" src="../assets/mockups/workshopzagreb.png" alt="Full page preview of the Workshop Zagreb website">
+      </div>
+
+      <div class="work-detail-content">
+        <a href="../index.html#work" class="work-detail-back">← Back to work</a>
+
+        <div class="work-detail-header reveal">
+          <p class="work-detail-tags">Café &amp; Workshops · Editorial Layout · Newsletter</p>
+          <h1>Workshop</h1>
+          <p class="work-detail-lede">A cozy neighborhood workshop and coffee spot in Zagreb — a warm, editorial brand site built around the daily rhythm from mornings to afternoons.</p>
+          <a href="https://workshopzagreb.com" target="_blank" rel="noopener" class="btn-primary">
+            Visit site
+            <span class="btn-arrow-wrap"><span>↗</span></span>
+          </a>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Summary</p>
+          <h2>Mornings for coffee, afternoons for creativity</h2>
+          <p>Workshop Zagreb is the site for a café that runs rotating creative afternoon workshops. The public pages lean into an editorial rhythm — soft typography, warm imagery, a pace that mirrors the space itself easing from slow mornings into working afternoons.</p>
+          <p>Behind it sits an owner-controlled admin panel so Marta and Luka can add, edit, and reschedule workshops themselves, with no developer needed after launch.</p>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Tech Stack</p>
+          <div class="work-detail-tech">
+            <span class="tag">ASP.NET Core Razor Pages</span>
+            <span class="tag">.NET 8</span>
+            <span class="tag">Entity Framework Core</span>
+            <span class="tag">SQL Server / Azure</span>
+            <span class="tag">Azure Blob Storage</span>
+            <span class="tag">GitHub Actions CI/CD</span>
+          </div>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Details</p>
+          <ul class="process-list">
+            <li>Workshop and WorkshopOccurrence models separate a workshop's static info from its individual scheduled dates, so one workshop can recur without duplicating its content</li>
+            <li>Owner-only admin dashboard for full workshop CRUD, gated behind authentication</li>
+            <li>Product and gallery photos uploaded straight to Azure Blob Storage through a dedicated storage service</li>
+            <li>GitHub Actions CI/CD deploys straight to Azure on push, so a schedule change ships without a manual release step</li>
+          </ul>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Learning Experience</p>
+          <p>Splitting a workshop from its occurrences was the modeling decision that mattered most — it kept a recurring class from turning into a copy-pasted row every time it repeated, and let the schedule change without touching the workshop's description or images.</p>
+          <p>Wiring CI/CD early, rather than as an afterthought, meant the owners could get a content fix live the same day it was requested instead of waiting on a manual deploy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-name">Gita</p>
+      <p class="footer-copy">Zagreb, Croatia · 2025</p>
+      <div class="footer-links">
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

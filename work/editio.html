@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editio — Gita</title>
+  <meta name="description" content="A Croatian lifestyle and hosting editorial platform — destinations, culture, and creators, wrapped in a quiet magazine layout.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=JetBrains+Mono:wght@400&family=Luxurious+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursor-dot"></div>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-pill">
+      <a href="../index.html" class="nav-logo"><img src="../assets/lilyIcon.png" alt="Gita" class="nav-logo-icon"></a>
+      <div class="nav-links">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#process">Process</a>
+        <a href="../index.html#about">About</a>
+      </div>
+      <a href="../index.html#contact" class="nav-cta">
+        Let's build
+        <span class="btn-arrow-wrap"><span>↗</span></span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Work Detail -->
+  <section class="section work-detail">
+    <div class="work-detail-split">
+      <div class="work-detail-media">
+        <video class="work-detail-video" poster="../assets/work/editio.jpg" muted loop playsinline>
+          <!-- <source src="../assets/work/editio.mp4" type="video/mp4"> -->
+        </video>
+      </div>
+
+      <div class="work-detail-content">
+        <a href="../index.html#work" class="work-detail-back">← Back to work</a>
+
+        <div class="work-detail-header reveal">
+          <p class="work-detail-tags">Editorial · Magazine Layout · Destination Guides</p>
+          <h1>Editio</h1>
+          <p class="work-detail-lede">A Croatian lifestyle and hosting editorial platform — destinations, culture, and creators, wrapped in a quiet magazine layout.</p>
+          <a href="https://editio-tan.vercel.app/" target="_blank" rel="noopener" class="btn-primary">
+            Visit site
+            <span class="btn-arrow-wrap"><span>↗</span></span>
+          </a>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Summary</p>
+          <h2>A magazine that shops itself out</h2>
+          <p>Editio is a content-to-commerce platform for Croatian lifestyle and hosting editorial: long-form articles on destinations, culture, and the makers behind them, sitting in a restrained magazine grid instead of a typical blog template.</p>
+          <p>A designer/maker layer cuts across the whole site — the same person can be an article's subject, a pin on the destinations map, and a storefront in the market, without three separate content models to keep in sync.</p>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Tech Stack</p>
+          <div class="work-detail-tech">
+            <span class="tag">Next.js 16</span>
+            <span class="tag">Sanity CMS</span>
+            <span class="tag">next-sanity</span>
+            <span class="tag">GROQ</span>
+            <span class="tag">Portable Text</span>
+            <span class="tag">react-simple-maps</span>
+            <span class="tag">styled-components</span>
+            <span class="tag">Vercel Analytics</span>
+          </div>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Details</p>
+          <ul class="process-list">
+            <li>Sanity Studio as the editing surface, with a custom Structure Builder sidebar grouping articles by Interior Design, Architecture, Physical Art, and Art of Hosting instead of one flat document list</li>
+            <li>Portable Text body copy with embedded custom blocks — a "Shop This Story" product callout, image galleries, and pull quotes — so commerce lives inside the writing, not bolted beside it</li>
+            <li>Designer storefronts support multiple platforms (Shopify, WooCommerce, Etsy, or a plain external link) through one conditional schema instead of one integration per platform</li>
+            <li>A destinations map built on geopoints attached to designer locations, so a studio in an article can also surface as a pin to visit</li>
+          </ul>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Learning Experience</p>
+          <p>The main lesson was modeling references instead of duplicating them — using Sanity's <code>references()</code> in GROQ to query "which listings mention this designer" instead of maintaining a hand-kept array on both sides that inevitably drifts out of sync.</p>
+          <p>Deciding reference vs. embed for every field (a designer is reused and queried on its own, so it's a reference; an SEO block only ever lives inside its parent, so it's embedded) turned out to be the single decision that kept the schema from sprawling into a monolith.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-name">Gita</p>
+      <p class="footer-copy">Zagreb, Croatia · 2025</p>
+      <div class="footer-links">
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
