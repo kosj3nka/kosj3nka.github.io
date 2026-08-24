@@ -1126,10 +1126,15 @@ body:has(button:hover) .cursor {
   border-top: 1px solid var(--border);
 }
 
+.section--contact .btn-primary--large {
+  padding: 13px 13px 13px 24px;
+}
+
 .contact-inner {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   gap: 24px;
 }
 
@@ -1313,9 +1318,7 @@ body:has(button:hover) .cursor {
 
   /* Contact */
   .contact-headline { font-size: clamp(2.2rem, 9vw, 3.5rem); }
-  .contact-inner { align-items: center; text-align: center; }
   .contact-sub { max-width: none; }
-  .section--contact .btn-primary--large { padding: 12px 12px 12px 20px; }
 
   /* Footer */
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
