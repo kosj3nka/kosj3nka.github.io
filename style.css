@@ -1244,6 +1244,7 @@ body:has(button:hover) .cursor {
   /* Hero */
   .hero { padding-top: 80px; }
   .hero-content { padding-top: 40px; padding-bottom: 32px; }
+  .hero-role { margin-left: 24px; margin-right: 24px; }
 
   /* Bento */
   .bento { grid-template-columns: 1fr; gap: 8px; }
@@ -1255,6 +1256,7 @@ body:has(button:hover) .cursor {
 
   /* Work gallery */
   .work-gallery { grid-template-columns: 1fr; gap: 16px; }
+  .gallery-card--full .gallery-thumb { aspect-ratio: 16 / 10; }
 
   /* Certificates / Work Experience columns */
   .accordion-columns { grid-template-columns: 1fr; column-gap: 0; }
@@ -1311,6 +1313,9 @@ body:has(button:hover) .cursor {
 
   /* Contact */
   .contact-headline { font-size: clamp(2.2rem, 9vw, 3.5rem); }
+  .contact-inner { align-items: center; text-align: center; }
+  .contact-sub { max-width: none; }
+  .section--contact .btn-primary--large { padding: 12px 12px 12px 20px; }
 
   /* Footer */
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
