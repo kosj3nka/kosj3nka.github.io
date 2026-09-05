@@ -275,6 +275,22 @@ body:has(button:hover) .cursor {
   pointer-events: none;
 }
 
+/* Fades the hero video into the solid page background of the next section */
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 45vh;
+  background: linear-gradient(to bottom,
+    rgba(9, 9, 12, 0) 0%,
+    rgba(9, 9, 12, 0.55) 55%,
+    var(--bg) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
 .hero-splash-defs {
   position: absolute;
   width: 0;
@@ -753,12 +769,6 @@ body:has(button:hover) .cursor {
   white-space: nowrap;
   flex-shrink: 0;
   transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s;
-}
-
-.gallery-card:hover .gallery-visit {
-  color: var(--accent);
-  border-color: rgba(200, 255, 62, 0.3);
-  background: rgba(200, 255, 62, 0.06);
 }
 
 .gallery-visit:hover {
@@ -1266,8 +1276,27 @@ body:has(button:hover) .cursor {
   /* Certificates / Work Experience columns */
   .accordion-columns { grid-template-columns: 1fr; column-gap: 0; }
 
-  /* Work detail — stack video above content */
-  .work-detail-split { flex-direction: column; }
+  /* Work detail — intro + CTA above the video, rest of the content below it */
+  .work-detail-split { flex-direction: column; align-items: stretch; }
+
+  /* Unwrap the content box so its children can be reordered around the media */
+  .work-detail-content {
+    display: contents;
+  }
+
+  .work-detail-back { order: -2; margin-top: 48px; }
+  .work-detail-header { order: -1; margin-bottom: 40px; }
+  .work-detail-media { order: 0; }
+  .work-detail-section { order: 1; }
+
+  .work-detail-back,
+  .work-detail-header,
+  .work-detail-section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .work-detail-section:last-child { padding-bottom: 80px; }
 
   .work-detail-media {
     position: static;
@@ -1282,12 +1311,6 @@ body:has(button:hover) .cursor {
     height: auto;
     min-height: 0;
     max-height: none;
-  }
-
-  .work-detail-content {
-    width: 100%;
-    max-width: none;
-    padding: 48px 24px 80px;
   }
 
   .card-core--horizontal {

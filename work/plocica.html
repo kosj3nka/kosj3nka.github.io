@@ -22,7 +22,6 @@
       <a href="../index.html" class="nav-logo"><img src="../assets/lilyIcon.png" alt="Gita" class="nav-logo-icon"></a>
       <div class="nav-links">
         <a href="../index.html#work">Work</a>
-        <a href="../index.html#process">Process</a>
         <a href="../index.html#about">About</a>
       </div>
       <a href="../index.html#contact" class="nav-cta">
@@ -78,7 +77,7 @@
             <li>Admin panel with CRUD over shapes, colours (image or colour picker), and projects, including multi-image upload straight to Blob Storage</li>
             <li>Public pages — collections, projects, about, FAQ, contact — read from the same EF Core models the admin panel edits, so nothing goes stale</li>
             <li>A Google Form embed for the contact flow, routing inquiries straight to the studio's inbox pre-sorted, instead of building a custom form backend</li>
-            <li>No JS framework on the frontend — vanilla JS handles the hero animation, keeping the public site light</li>
+            <li>No JS framework on the frontend — vanilla JS drives a dynamic reveal hero, where the tile patterns build themselves in on load instead of sitting static, keeping the public site light</li>
           </ul>
         </div>
 
@@ -86,6 +85,7 @@
           <p class="eyebrow-label">Learning Experience</p>
           <p>The key decision was recognizing that a JSON-in-repo content model wouldn't survive contact with two owners who needed to upload photos themselves — that requirement alone justified a real database and Blob Storage over a simpler static approach.</p>
           <p>It was also a reminder that Azure App Service's local disk is ephemeral: images and data both had to live in dedicated services (Azure SQL, Blob Storage) rather than anywhere that gets wiped on every deploy.</p>
+          <p>Compared to the backend work, the hero was the more creative side of the build — a dynamic reveal instead of a static banner, letting the tile patterns compose themselves on load. It was less about solving a technical problem and more a chance to design in form, treating pattern and motion as the introduction to the studio's craft rather than decoration on top of it.</p>
         </div>
       </div>
     </div>
@@ -95,11 +95,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <p class="footer-name">Gita</p>
-      <p class="footer-copy">Zagreb, Croatia · 2025</p>
-      <div class="footer-links">
-        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-      </div>
+      <p class="footer-copy">Zagreb, Croatia · 2026</p>
     </div>
   </footer>
 
