@@ -1460,6 +1460,18 @@ body:has(button:hover) .cursor {
   .contact-headline { font-size: clamp(2.2rem, 9vw, 3.5rem); }
   .contact-sub { max-width: none; }
 
+  .section--contact .btn-primary--large {
+    font-size: 14px;
+    padding: 11px 11px 11px 20px;
+    gap: 8px;
+  }
+
+  .section--contact .btn-primary--large .btn-arrow-wrap {
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+  }
+
   /* Footer */
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
 
