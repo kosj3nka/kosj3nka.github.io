@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AO3 Enhancer — Gita</title>
+  <meta name="description" content="A cross-browser reading companion for Archive of Our Own — smarter search, reading stats, block lists, and a yearly AO3 Wrapped, built from scratch.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=JetBrains+Mono:wght@400&family=Luxurious+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursor-dot"></div>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-pill">
+      <a href="../index.html" class="nav-logo"><img src="../assets/lilyIcon.png" alt="Gita" class="nav-logo-icon"></a>
+      <div class="nav-links">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#about">About</a>
+      </div>
+      <a href="../index.html#contact" class="nav-cta">
+        Let's build
+        <span class="btn-arrow-wrap"><span>↗</span></span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Work Detail -->
+  <section class="section work-detail">
+    <div class="work-detail-split">
+      <div class="work-detail-media work-detail-media-static">
+        <img class="work-detail-video work-detail-image-full" src="../assets/work/ao3Extension.jpg" alt="AO3 Enhancer extension settings panel, showing reading speed, history cache, and always-block lists">
+      </div>
+
+      <div class="work-detail-content">
+        <a href="../index.html#work" class="work-detail-back">← Back to work</a>
+
+        <div class="work-detail-header reveal">
+          <p class="work-detail-tags">Browser Extension · Chrome &amp; Firefox · Reading Tools</p>
+          <h1>AO3 Enhancer</h1>
+          <p class="work-detail-lede">A reading companion for Archive of Our Own (AO3), the nonprofit, open-source fanfiction archive — smarter search filters, reading-time estimates, tag block lists, and a yearly "AO3 Wrapped" stats page.</p>
+          <a href="https://addons.mozilla.org/en-US/firefox/addon/ao3-plus/" target="_blank" rel="noopener" class="btn-primary">
+            View on Firefox Add-ons
+            <span class="btn-arrow-wrap"><span>↗</span></span>
+          </a>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Summary</p>
+          <h2>A reading companion built from scratch for AO3</h2>
+          <p>Archive of Our Own (AO3) is a free, ad-free, open-source fanfiction archive run by the nonprofit Organization for Transformative Works, hosting millions of fan-written works across every fandom. It's deliberately minimal, which leaves room for tools like this to fill in the gaps.</p>
+          <p>AO3 Enhancer is a browser extension built from scratch on top of that archive. It runs on both Chrome and Firefox from a single codebase, adding the search, reading, and filtering tools the site itself doesn't offer — history-aware filtering, a synced read-works cache, and a wrapped-style yearly stats page.</p>
+          <p>Everything lives in the extension popup — Settings, Saved searches, Word Replacer, and AO3 Wrapped — so readers never have to leave AO3 to tune how it works for them.</p>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Tech Stack</p>
+          <div class="work-detail-tech">
+            <span class="tag">JavaScript</span>
+            <span class="tag">WebExtensions API</span>
+            <span class="tag">Chrome Manifest V3</span>
+            <span class="tag">Firefox Add-ons</span>
+            <span class="tag">Browser Storage / History API</span>
+          </div>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Details</p>
+          <ul class="process-list">
+            <li>Search filters: select multiple ratings at once, switch tag matching from AND to OR, a dedicated "main ship" field with AO3 autocomplete, a default search language, and a one-click filter for single-chapter works</li>
+            <li>Reading experience: estimated reading time and average words-per-chapter on work blurbs and work pages, based on a configurable reading speed, plus clearer "Chapter X of Y" labels</li>
+            <li>Always-block lists for tags, characters, relationships, and authors — applied site-wide or search-only, and carried through pagination</li>
+            <li>Read-history awareness: an optional browser-history check on top of AO3's own history, backed by a synced local cache, so already-read works get filtered out automatically</li>
+            <li>Saved searches, a Word Replacer for swapping words or phrases inside a fic, and an AO3 Wrapped page — fics read, words read, estimated time spent, and top fandoms/ships/tags for the year</li>
+          </ul>
+        </div>
+
+        <div class="work-detail-section reveal">
+          <p class="eyebrow-label">Learning Experience</p>
+          <p>Building everything from scratch meant designing the content-script injection, filtering logic, and popup UI without a reference implementation to lean on — every feature had to be reverse-engineered from how AO3's own pages are structured.</p>
+          <p>Getting the same code running on both Chrome and Firefox surfaced the practical differences between Manifest V3 and the Firefox WebExtensions model, particularly around background scripts and storage — a good forcing function for writing browser-agnostic code instead of chasing one platform's quirks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-name">Gita</p>
+      <p class="footer-copy">Zagreb, Croatia · 2026</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -48,6 +48,11 @@ a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 img { display: block; max-width: 100%; }
 
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
 
 .cursor {
   width: 36px;
@@ -204,6 +209,22 @@ body:has(button:hover) .cursor {
 }
 
 .nav-links a:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: var(--text-dim);
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-icon-link:hover {
   color: var(--text);
   background: rgba(255, 255, 255, 0.06);
 }
@@ -479,6 +500,7 @@ body:has(button:hover) .cursor {
 .card--medium { grid-column: span 5; }
 .card--small  { grid-column: span 4; }
 .card--wide   { grid-column: span 12; }
+.gallery-card--other { grid-column: span 8; }
 
 .card { display: flex; flex-direction: column; }
 
@@ -787,6 +809,35 @@ body:has(button:hover) .cursor {
   margin-bottom: 10px;
 }
 
+/* Split layout for portrait/UI screenshots (e.g. browser extension) */
+.gallery-card--other {
+  height: 100%;
+}
+
+.gallery-card--other .gallery-shell {
+  height: 100%;
+}
+
+.gallery-core--split {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+}
+
+.gallery-thumb--portrait {
+  flex: 0 0 260px;
+  aspect-ratio: 625 / 707;
+  height: auto;
+  align-self: center;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.gallery-thumb--portrait img {
+  border-radius: 10px;
+  object-fit: contain;
+}
+
 .gallery-body p:not(.gallery-tag) {
   font-size: 14px;
   font-weight: 300;
@@ -1000,7 +1051,7 @@ body:has(button:hover) .cursor {
   font-family: inherit;
 }
 
-.accordion-header:hover .eyebrow-label { color: var(--text); }
+.accordion-header .eyebrow-label { color: var(--text); }
 
 .accordion-toggle {
   font-family: var(--font-mono);
@@ -1027,7 +1078,7 @@ body:has(button:hover) .cursor {
 .accordion-list li {
   font-size: 14px;
   font-weight: 300;
-  color: var(--text);
+  color: var(--text-dim);
 }
 
 /* ============================================================
@@ -1105,6 +1156,11 @@ body:has(button:hover) .cursor {
   line-height: 1.75;
 }
 
+.about-inline-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .about-links {
   display: flex;
   flex-wrap: wrap;
@@ -1165,6 +1221,42 @@ body:has(button:hover) .cursor {
 }
 
 /* ============================================================
+   KITTEN GAME
+   ============================================================ */
+.kitten-game {
+  margin-top: 56px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.kitten-game canvas {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.kitten-game-hint {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-dimmer);
+  text-align: center;
+  padding: 0 16px;
+}
+
+@media (hover: none) {
+  .kitten-game-hint-key { display: none; }
+}
+
+/* ============================================================
    FOOTER
    ============================================================ */
 .footer {
@@ -1190,6 +1282,24 @@ body:has(button:hover) .cursor {
   font-size: 12px;
   color: var(--text-dimmer);
   font-family: var(--font-mono);
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dimmer);
+  transition: color 0.2s;
+}
+
+.footer-social:hover {
+  color: var(--text);
 }
 
 .footer-links {
@@ -1228,6 +1338,7 @@ body:has(button:hover) .cursor {
   .card--medium { grid-column: span 12; min-height: 260px; }
   .card--small  { grid-column: span 6;  min-height: 240px; }
   .card--wide   { grid-column: span 12; }
+  .gallery-card--other { grid-column: span 12; }
 
   .process-grid { grid-template-columns: 1fr; }
   .stack-grid   { grid-template-columns: repeat(2, 1fr); }
@@ -1247,6 +1358,7 @@ body:has(button:hover) .cursor {
   .nav-logo-icon { width: 40px; height: 40px; }
 
   .nav-links a { font-size: 12.5px; padding: 7px 10px; }
+  .nav-icon-link { width: 30px; height: 30px; }
 
   .nav-cta {
     font-size: 12.5px;
@@ -1267,11 +1379,16 @@ body:has(button:hover) .cursor {
   .card--medium,
   .card--small,
   .card--wide,
-  .card--wide.card--solo { grid-column: span 1; min-height: unset; }
+  .card--wide.card--solo,
+  .gallery-card--other { grid-column: span 1; min-height: unset; }
 
   /* Work gallery */
   .work-gallery { grid-template-columns: 1fr; gap: 16px; }
   .gallery-card--full .gallery-thumb { aspect-ratio: 16 / 10; }
+
+  /* Extension card collapses to a stacked layout on small screens */
+  .gallery-core--split { flex-direction: column; }
+  .gallery-thumb--portrait { flex-basis: auto; width: 100%; }
 
   /* Certificates / Work Experience columns */
   .accordion-columns { grid-template-columns: 1fr; column-gap: 0; }
@@ -1363,6 +1480,7 @@ body:has(button:hover) .cursor {
   .nav.scrolled .nav-logo { width: 32px; margin-right: 6px; }
   .nav-logo-icon { width: 32px; height: 32px; }
   .nav-links a { font-size: 11px; padding: 6px 7px; }
+  .nav-icon-link { display: none; }
   .nav-cta { font-size: 11px; padding: 6px 6px 6px 11px; gap: 6px; }
   .btn-arrow-wrap { width: 22px; height: 22px; font-size: 11px; }
 }
