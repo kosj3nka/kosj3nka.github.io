@@ -15,6 +15,7 @@
   <style>
     .post {
       max-width: 720px;
+      padding: 0 24px;
     }
     .post-meta {
       font-family: 'JetBrains Mono', monospace;
@@ -41,6 +42,61 @@
     .post-back:hover {
       opacity: 1;
     }
+
+    .screenshot {
+      width: 100%;
+      margin: 32px 0;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--card, #1a1a1e);
+    }
+    .screenshot-bar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 7px;
+      background: rgba(255, 255, 255, 0.04);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .screenshot-btn {
+      width: 11px;
+      height: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0;
+      font-family: 'Pixelify Sans', monospace;
+      font-size: 10px;
+      line-height: 1;
+      color: rgba(255, 255, 255, 0.45);
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.12), inset -1px -1px 0 rgba(0, 0, 0, 0.3);
+      -webkit-font-smoothing: none;
+      image-rendering: pixelated;
+    }
+    .screenshot img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .screenshot--float-right {
+      max-width: 380px;
+      float: right;
+      margin: 6px 0 20px 28px;
+    }
+    .post-body .clear {
+      clear: both;
+    }
+
+    @media (max-width: 680px) {
+      .screenshot--float-right {
+        float: none;
+        max-width: 100%;
+        margin: 32px 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -60,10 +116,18 @@
       <div class="section-header reveal">
         <p class="eyebrow-label">Blog</p>
         <h2 class="section-title">The hottest new programming language is English.</h2>
-        <p class="post-meta">Gita Projić</p>
+        <p class="post-meta">Gita Projić | 20 september 2026</p>
       </div>
 
       <div class="post-body reveal">
+        <div class="screenshot">
+          <div class="screenshot-bar">
+            <span class="screenshot-btn">–</span>
+            <span class="screenshot-btn">×</span>
+          </div>
+          <img src="../assets/blog/anthropicPrediction.png">
+        </div>
+
         <p>With everyone saying AI will replace all developers, and anyone who touches code for a living, it's hard not to spiral and start worrying about your future. Especially if you're an 18-year-old student who already goes to a vocational technical high school for it and plans on pursuing a CS degree.</p>
 
         <p>With every model getting better and better, and a growing number of MCPs keep shrinking the list of things only humans can do. So you start to wonder what you're even trying for.</p>
@@ -72,11 +136,25 @@
 
         <p>Every new technology kills some jobs and invents others to run and grow the new thing.</p>
 
+        <div class="screenshot screenshot--float-right">
+          <div class="screenshot-bar">
+            <span class="screenshot-btn">–</span>
+            <span class="screenshot-btn">×</span>
+          </div>
+          <img src="../assets/blog/percentageAIcode.png">
+        </div>
         <p>Look around and you'll spot the roles that used to be human. A traffic light used to be a person standing in the road directing cars. Phone calls used to be connected by hand: in the US there were around 342,000 switchboard operators at the peak in 1950, about 40,000 by 1984, and barely more than a thousand today. That work didn't vanish overnight, though. It faded over decades while demand for phones kept growing, and people moved into the jobs that grew up around it.</p>
 
-        <p>Furthermore, industries that aren't focused on tech are almost always behind on state-of-the-art technology. In Croatia, I am always amazed at how many tasks are still done manually at companies when they could benefit more from automating them.</p>
+        <p class="clear">Furthermore, industries that aren't focused on tech are almost always behind on state-of-the-art technology. In Croatia, I am always amazed at how many tasks are still done manually at companies when they could benefit more from automating them.</p>
 
         <p>Today, AI just removed another manual task: typing code, and what I think of as <em>parametar</em> work — digging through documentation to learn every flag, option, and compatibility quirk across all the different tools you're using.</p>
+        <div class="screenshot">
+          <div class="screenshot-bar">
+            <span class="screenshot-btn">–</span>
+            <span class="screenshot-btn">×</span>
+          </div>
+          <img src="../assets/blog/twitterKarpathy.png">
+        </div>
 
         <p>"The hottest new programming language is English." Andrej Karpathy, the man who coined the term <em>vibe coding</em>, tweeted back in January 2023, and it stuck because it is basically true now.</p>
 

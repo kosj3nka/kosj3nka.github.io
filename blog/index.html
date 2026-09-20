@@ -116,8 +116,7 @@
     }
     .blog-about-photo img {
       width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
+      height: auto;
       display: block;
     }
 
@@ -257,7 +256,13 @@
         padding: 20px;
         margin-top: clamp(160px, 60vw, 340px);
       }
-      .blog-banner { min-height: clamp(160px, 90vw, 460px); }
+      .blog-banner {
+        min-height: 0;
+        aspect-ratio: 736 / 981;
+        background-color: var(--bg);
+        background-size: contain;
+        background-position: center;
+      }
     }
 
     /* Blog page has no .hero, so the scroll listener flags "scrolled" almost
