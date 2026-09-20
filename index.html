@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,24 +78,7 @@
   <div class="cursor-dot" id="cursor-dot"></div>
 
   <!-- Nav -->
-  <nav class="nav" id="nav">
-    <div class="nav-pill">
-      <a href="#" class="nav-logo"><img src="assets/lilyIcon.png" alt="Gita" class="nav-logo-icon"></a>
-      <div class="nav-links">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-      </div>
-      <a href="https://github.com/kosj3nka" target="_blank" rel="noopener" class="nav-icon-link" aria-label="Gita on GitHub">
-        <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true">
-          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
-        </svg>
-      </a>
-      <a href="#contact" class="nav-cta">
-        Let's build
-        <span class="btn-arrow-wrap"><span>↗</span></span>
-      </a>
-    </div>
-  </nav>
+  {% include nav.html %}
 
   <!-- Hero -->
   <section class="hero">
@@ -294,6 +279,31 @@
     </div>
   </section>
 
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid reveal">
+        <div class="about-left">
+          <p class="eyebrow-label">About</p>
+          <h2 class="section-title">Student<br>freelancer.</h2>
+          <div class="about-links">
+            <a href="mailto:gitaprojic@gmail.com" class="about-link">gitaprojic@gmail.com ↗</a>
+          </div>
+        </div>
+        <div class="about-right">
+          <p>I'm an 18 year old high school student, based in Zagreb.</p>
+          <p>I go to <a href="https://www.tsrb.hr/" target="_blank" rel="noopener noreferrer" class="about-inline-link">Technical school Ruđer Bošković</a> with plans on going to <a href="https://www.foi.unizg.hr/" target="_blank" rel="noopener noreferrer" class="about-inline-link">FOI university</a>.</p>
+          <p>I've always loved design, finding solutions to problems and working on project that feel whole - working from top to bottom with a vision.
+            I belive businesses should always have a visual identity and strong marketing and internal systems; with that, everything else is easier.
+            <br>So that is exactly what I can do for you!
+
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Certificates & Work Experience -->
   <section class="section section--subtle" id="credentials">
     <div class="container accordion-columns">
@@ -328,31 +338,6 @@
     </div>
   </section>
 
-  <!-- About -->
-  <section class="section" id="about">
-    <div class="container">
-      <div class="about-grid reveal">
-        <div class="about-left">
-          <p class="eyebrow-label">About</p>
-          <h2 class="section-title">Student<br>freelancer.</h2>
-          <div class="about-links">
-            <a href="mailto:gitaprojic@gmail.com" class="about-link">gitaprojic@gmail.com ↗</a>
-          </div>
-        </div>
-        <div class="about-right">
-          <p>I'm an 18 year old high school student, based in Zagreb.</p>
-          <p>I go to <a href="https://www.tsrb.hr/" target="_blank" rel="noopener noreferrer" class="about-inline-link">Technical school Ruđer Bošković</a> with plans on going to <a href="https://www.foi.unizg.hr/" target="_blank" rel="noopener noreferrer" class="about-inline-link">FOI university</a>.</p>
-          <p>I've always loved design, finding solutions to problems and working on project that feel whole - working from top to bottom with a vision.
-            I belive businesses should always have a visual identity and strong marketing and internal systems; with that, everything else is easier.
-            <br>So that is exactly what I can do for you!
-
-          </p>
-          
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Contact -->
   <section class="section section--contact" id="contact">
     <div class="container">
@@ -377,19 +362,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p class="footer-name">Gita</p>
-      <div class="footer-right">
-        <p class="footer-copy">Zagreb, Croatia · 2026</p>
-        <a href="https://github.com/kosj3nka" target="_blank" rel="noopener" class="footer-social" aria-label="Gita on GitHub">
-          <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true">
-            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </footer>
+  {% include footer.html %}
 
   <script src="script.js"></script>
 </body>

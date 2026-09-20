@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,19 +19,7 @@
   <div class="cursor-dot" id="cursor-dot"></div>
 
   <!-- Nav -->
-  <nav class="nav" id="nav">
-    <div class="nav-pill">
-      <a href="../index.html" class="nav-logo"><img src="../assets/lilyIcon.png" alt="Gita" class="nav-logo-icon"></a>
-      <div class="nav-links">
-        <a href="../index.html#work">Work</a>
-        <a href="../index.html#about">About</a>
-      </div>
-      <a href="../index.html#contact" class="nav-cta">
-        Let's build
-        <span class="btn-arrow-wrap"><span>↗</span></span>
-      </a>
-    </div>
-  </nav>
+  {% include nav.html %}
 
   <!-- Work Detail -->
   <section class="section work-detail">
@@ -91,12 +81,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p class="footer-name">Gita</p>
-      <p class="footer-copy">Zagreb, Croatia · 2026</p>
-    </div>
-  </footer>
+  {% include footer.html %}
 
   <script src="../script.js"></script>
 </body>

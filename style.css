@@ -107,6 +107,10 @@ body:has(button:hover) .cursor {
   padding: 90px 0;
 }
 
+#work {
+  padding-top: 50px;
+}
+
 .section-header {
   margin-bottom: 64px;
 }
@@ -1029,7 +1033,7 @@ body:has(button:hover) .cursor {
 /* ============================================================
    ACCORDION SECTIONS (Certificates / Work Experience)
    ============================================================ */
-.section.section--subtle { padding: 14px 0; }
+.section.section--subtle { padding: 0 0 14px; margin-bottom: 40px; }
 
 .accordion-columns {
   display: grid;
